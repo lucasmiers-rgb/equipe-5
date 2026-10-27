@@ -1,0 +1,288 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #292929;
+    background: #f5f6f4;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.topo {
+    background: #087b3e;
+    color: white;
+    padding: 20px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: #ffda35;
+}
+
+.pesquisa {
+    display: flex;
+    flex: 1;
+    max-width: 600px;
+}
+
+.pesquisa input {
+    width: 100%;
+    min-width: 0;
+    padding: 13px;
+    border: none;
+    border-radius: 6px 0 0 6px;
+    font-size: 15px;
+}
+
+.pesquisa button {
+    padding: 13px 18px;
+    background: #ffda35;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 0 6px 6px 0;
+}
+
+.carrinho {
+    white-space: nowrap;
+    font-weight: bold;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 17px;
+    background: white;
+    box-shadow: 0 2px 5px #00000010;
+}
+
+.menu a:hover {
+    color: #087b3e;
+}
+
+.banner {
+    margin: 25px auto;
+    width: 90%;
+    min-height: 300px;
+    padding: 45px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(90deg, #073f2bea, #073f2b80),
+        url("https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=85")
+        center/cover;
+    color: white;
+}
+
+.banner > div {
+    max-width: 550px;
+}
+
+.destaque {
+    color: #ffda35;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.banner h1 {
+    font-size: clamp(30px, 4vw, 46px);
+    margin-bottom: 15px;
+}
+
+.banner p {
+    line-height: 1.6;
+}
+
+.botao {
+    display: inline-block;
+    background: #ffda35;
+    color: #222;
+    padding: 14px 25px;
+    margin-top: 22px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.secao {
+    width: 90%;
+    margin: 45px auto;
+}
+
+.secao h2 {
+    margin-bottom: 25px;
+    font-size: 27px;
+}
+
+.categorias {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.categorias a {
+    background: white;
+    padding: 25px 10px;
+    border-radius: 9px;
+    text-align: center;
+    font-size: 32px;
+    box-shadow: 0 2px 8px #00000008;
+    transition: 0.2s;
+}
+
+.categorias a:hover {
+    transform: translateY(-4px);
+    color: #087b3e;
+}
+
+.categorias span {
+    display: block;
+    font-size: 15px;
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+.produtos {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.produto {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px #0000000c;
+    transition: 0.2s;
+}
+
+.produto:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px #00000015;
+}
+
+.produto img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+}
+
+.info {
+    padding: 20px;
+}
+
+.info h3 {
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+
+.descricao {
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.preco {
+    color: #087b3e;
+    font-size: 23px;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+
+.preco small {
+    font-size: 13px;
+}
+
+.info button {
+    width: 100%;
+    padding: 13px;
+    background: #087b3e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.info button:hover {
+    background: #065d2e;
+}
+
+footer {
+    background: #163b2a;
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+    line-height: 2;
+}
+
+/* Ajustes para celulares e tablets */
+@media (max-width: 800px) {
+    .topo {
+        flex-wrap: wrap;
+    }
+
+    .pesquisa {
+        order: 3;
+        flex-basis: 100%;
+        max-width: none;
+    }
+
+    .menu {
+        gap: 15px;
+    }
+
+    .categorias {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .produtos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .banner {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 500px) {
+    .produtos {
+        grid-template-columns: 1fr;
+    }
+
+    .banner {
+        min-height: 280px;
+        padding: 25px;
+    }
+
+    .secao h2 {
+        font-size: 23px;
+    }
+
+    .carrinho {
+        font-size: 14px;
+    }
+}
